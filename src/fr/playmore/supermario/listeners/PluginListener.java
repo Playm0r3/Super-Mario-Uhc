@@ -3,7 +3,9 @@ package fr.playmore.supermario.listeners;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
+import org.bukkit.event.block.BlockBreakEvent;
 import org.bukkit.event.player.PlayerJoinEvent;
+import org.bukkit.event.player.PlayerQuitEvent;
 
 import fr.playmore.supermario.Plugin;
 import fr.playmore.supermario.State;
@@ -24,7 +26,27 @@ public class PluginListener implements Listener {
 		
 		if(plugin.isState(State.WAITTING)) {
 			PlayerManager.PlayerJoinWhenWaitting(player, plugin.end);
+			event.setJoinMessage("§2§l" + player.getName() + "§r§a a rejoint la partie.");
 		}
+	}
+	
+	@EventHandler
+	public void onQuit(PlayerQuitEvent event) {
+		Player player = event.getPlayer();
+		
+		if(plugin.isState(State.WAITTING)) {
+			PlayerManager.PlayerQuitWhenWaitting(player);
+			event.setQuitMessage("§2§l" +player.getName() + "§r§a a rejoint la partie.");
+		}
+	}
+	
+	@EventHandler
+	public void destroyBlock(BlockBreakEvent event) {
+		
+		if(plugin.isState(State.WAITTING)) {
+			event.setCancelled(true);
+		}
+		
 	}
 
 }
