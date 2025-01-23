@@ -1,6 +1,6 @@
 name: SuperMarioUhc
 author: Playmore
-version: 0.0.2
+version: 0.0.3
 main: fr.playmore.supermario.Plugin
 commands:
   start:

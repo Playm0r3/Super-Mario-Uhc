@@ -33,4 +33,10 @@ public class PlayerManager {
 		}
 	}
 	
+	public static void PlaySoundEveryone(Location loc, Sound sound, float volume, float pitch) {
+		for(Player player : Bukkit.getOnlinePlayers()) {
+			player.playSound(loc, sound, volume, pitch);
+		}
+	}
+	
 }
