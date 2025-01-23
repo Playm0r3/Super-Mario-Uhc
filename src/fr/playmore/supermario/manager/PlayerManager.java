@@ -1,8 +1,11 @@
 package fr.playmore.supermario.manager;
 
 import java.util.ArrayList;
+
+import org.bukkit.Bukkit;
 import org.bukkit.GameMode;
 import org.bukkit.Location;
+import org.bukkit.Sound;
 import org.bukkit.World;
 import org.bukkit.entity.Player;
 
@@ -22,6 +25,12 @@ public class PlayerManager {
 	
 	public static void PlayerQuitWhenWaitting(Player player) {
 		players.remove(player);
+	}
+	
+	public static void PlaySoundEveryone(Sound sound, float volume, float pitch) {
+		for(Player player : Bukkit.getOnlinePlayers()) {
+			player.playSound(player.getLocation(), sound, volume, pitch);
+		}
 	}
 	
 }

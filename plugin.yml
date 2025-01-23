@@ -2,3 +2,10 @@ name: SuperMarioUhc
 author: Playmore
 version: 0.0.2
 main: fr.playmore.supermario.Plugin
+commands:
+  start:
+    description: lance la partie
+    use: operator.use
+  state:
+    description: permet de connaitre l'etat de la partie
+    use: operator.use

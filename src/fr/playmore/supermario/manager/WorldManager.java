@@ -1,8 +1,11 @@
 package fr.playmore.supermario.manager;
 
+import org.bukkit.Bukkit;
 import org.bukkit.Location;
 import org.bukkit.Material;
 import org.bukkit.World;
+
+import fr.playmore.supermario.Plugin;
 
 public class WorldManager {
 	
@@ -38,6 +41,12 @@ public class WorldManager {
 		fill(world, new Location(world, x2 - 1, 199, _z), new Location(world, x2 - 1, 205, z2 - 1), Material.BARRIER);
 		System.out.print("Spawn genere ! (done)");
 		
+	}
+	
+	public static void LoadWorld(Plugin plugin) {
+		plugin.overworld = Bukkit.getWorld("world");
+		plugin.nether = Bukkit.getWorld("world_nether");
+		plugin.end = Bukkit.getWorld("world_the_end");
 	}
 
 
