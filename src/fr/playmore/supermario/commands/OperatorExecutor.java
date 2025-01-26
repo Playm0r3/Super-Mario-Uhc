@@ -8,6 +8,7 @@ import org.bukkit.command.ConsoleCommandSender;
 import org.bukkit.entity.Player;
 
 import fr.playmore.supermario.Plugin;
+import fr.playmore.supermario.roles.Roles;
 import fr.playmore.supermario.State;
 import fr.playmore.supermario.task.Start;
 
@@ -67,6 +68,24 @@ public class OperatorExecutor implements CommandExecutor{
 				}
 				if(cmd.getName().equals("add") && !plugin.isState(State.WAITTING)) {
 					
+					if(args.length < 2 || args.length > 2) {
+						player.sendMessage(plugin.prefixPlugin + " §cErreur de syntaxe §7: /add <type> <name>");
+						return false;
+					}
+					
+					if(args[0].equals("role")) {
+						
+						try {
+							Class<?> clazz = Class.forName("fr.playmore.supermario." + args[1]);
+							Roles.rolesList.add(clazz.getName());
+							player.sendMessage(plugin.prefixPlugin + " Le role : " + args[1] + " à été ajouté à la liste");
+							return true;
+						} catch(Exception e) {
+							e.printStackTrace();
+							player.sendMessage(plugin.prefixPlugin + " Erreur de syntaxe le role n'existe surment pas");
+						}
+						return false;
+					}
 				}
 			}
 		}
