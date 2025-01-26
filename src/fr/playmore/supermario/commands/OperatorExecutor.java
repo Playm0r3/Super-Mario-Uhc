@@ -65,6 +65,9 @@ public class OperatorExecutor implements CommandExecutor{
 					player.sendMessage(plugin.prefixPlugin + " Etat de la partie : §2" + plugin.getState() + "§r");
 					return true;
 				}
+				if(cmd.getName().equals("add") && !plugin.isState(State.WAITTING)) {
+					
+				}
 			}
 		}
 		

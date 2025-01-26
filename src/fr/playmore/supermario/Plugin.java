@@ -49,6 +49,8 @@ public class Plugin extends JavaPlugin {
 		
 		getCommand("start").setExecutor(operator);
 		getCommand("state").setExecutor(operator);
+		getCommand("add").setExecutor(operator);
+		getCommand("remove").setExecutor(operator);
 		
 	}
 	

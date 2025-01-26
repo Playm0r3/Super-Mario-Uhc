@@ -9,3 +9,9 @@ commands:
   state:
     description: permet de connaitre l'etat de la partie
     use: operator.use
+  add:
+    description: permet d'ajouter des roles dans la role liste
+    use: operator.use
+  remove:
+    description: permet de retirer des roles dans la role liste
+    use: operator.use

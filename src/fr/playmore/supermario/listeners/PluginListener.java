@@ -83,7 +83,14 @@ public class PluginListener implements Listener {
 			
 			if(event.getDamager() instanceof Arrow) {
 				Arrow arrow = (Arrow) event.getDamager();
+				
+				if(!plugin.isState(State.WAITTING)) {
+					event.setCancelled(false);
+					return;
+				}
+				
 				if(arrow.getShooter() instanceof Player && victim.getHealth() <= event.getDamage()) {
+					
 					Player shooter = (Player) arrow.getShooter();
 					PlayerManager.PlaySoundEveryone(victim.getLocation(), Sound.AMBIENCE_THUNDER, 10.f, 1.f);
 					Bukkit.broadcastMessage("§4" + shooter.getName() + " §7a tué §c" + victim.getName() 
