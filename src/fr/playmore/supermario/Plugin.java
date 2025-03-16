@@ -4,6 +4,7 @@ import org.bukkit.World;
 import org.bukkit.plugin.java.JavaPlugin;
 
 import fr.playmore.supermario.commands.OperatorExecutor;
+import fr.playmore.supermario.commands.PlayerExecutor;
 import fr.playmore.supermario.listeners.PluginListener;
 import fr.playmore.supermario.manager.WorldManager;
 
@@ -46,11 +47,13 @@ public class Plugin extends JavaPlugin {
 	public void LoadCommand() {
 		
 		OperatorExecutor operator = new OperatorExecutor(this);
+		PlayerExecutor player = new PlayerExecutor(this);
 		
 		getCommand("start").setExecutor(operator);
 		getCommand("state").setExecutor(operator);
 		getCommand("add").setExecutor(operator);
 		getCommand("remove").setExecutor(operator);
+		getCommand("mu").setExecutor(player);
 		
 	}
 	

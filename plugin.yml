@@ -15,3 +15,6 @@ commands:
   remove:
     description: permet de retirer des roles dans la role liste
     use: operator.use
+  mu:
+    description: commande pour s'ajouter dans la liste des participant en choisissant son role
+    use:

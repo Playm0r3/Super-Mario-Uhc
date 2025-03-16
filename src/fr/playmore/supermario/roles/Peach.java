@@ -26,7 +26,7 @@ public class Peach extends Role implements Listener{
 	
 	@Override
 	public void ApplyEffect() {
-		//empty 
+		//empty
 	}
 	
 	@EventHandler
