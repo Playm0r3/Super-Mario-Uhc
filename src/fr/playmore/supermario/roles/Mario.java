@@ -13,7 +13,7 @@ import fr.playmore.supermario.title.Title;
 import fr.playmore.supermario.utils.Color;
 import fr.playmore.supermario.utils.Timer;
 
-public abstract class Mario extends Role implements Listener{
+public class Mario extends Role implements Listener{
 	
 	Title title = new Title();
 	PotionEffect marioEffectStrenght = new PotionEffect(PotionEffectType.INCREASE_DAMAGE, 120, 0);

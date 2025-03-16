@@ -7,6 +7,7 @@ public enum Color {
 	YELLOW("§e"),
 	BLUE("§1"),
 	ORANGE("§6"),
+	PINK("§d"),
 	BLACK("§0"),
 	WHITE("§f");
 
