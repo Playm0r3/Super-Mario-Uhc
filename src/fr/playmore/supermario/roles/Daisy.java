@@ -9,9 +9,8 @@ import fr.playmore.supermario.utils.Color;
 
 public class Daisy extends Role implements Listener{
 
-	public Daisy(String name, Color color) {
-		super(name, color);
-		// TODO Auto-generated constructor stub
+	public Daisy() {
+		super("Daisy", Color.YELLOW);
 	}
 	
 	private float damageReduce = 0.80f;
