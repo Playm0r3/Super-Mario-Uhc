@@ -1,9 +1,11 @@
 package fr.playmore.supermario.roles;
 
+import org.bukkit.entity.Player;
 import fr.playmore.supermario.utils.Color;
 
-public class Role {
+public abstract class Role{
 
+	public Player player;
 	public String name;
 	public Color color;
 	
@@ -12,4 +14,6 @@ public class Role {
 		this.name = name;
 		this.color = color;
 	}
+	
+	public abstract void ApplyEffect();	
 }
