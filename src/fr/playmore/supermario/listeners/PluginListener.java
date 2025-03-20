@@ -6,8 +6,10 @@ import org.bukkit.entity.Arrow;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
+import org.bukkit.event.block.Action;
 import org.bukkit.event.block.BlockBreakEvent;
 import org.bukkit.event.entity.EntityDamageByEntityEvent;
+import org.bukkit.event.inventory.InventoryClickEvent;
 import org.bukkit.event.player.PlayerJoinEvent;
 import org.bukkit.event.player.PlayerQuitEvent;
 
@@ -15,7 +17,10 @@ import fr.playmore.supermario.Plugin;
 import fr.playmore.supermario.State;
 import fr.playmore.supermario.manager.PlayerManager;
 import fr.playmore.supermario.math.Vector3;
+import fr.playmore.supermario.roles.Joueur;
+import fr.playmore.supermario.roles.Mario;
 import fr.playmore.supermario.title.Title;
+import fr.playmore.supermario.utils.CustomInventory;
 
 public class PluginListener implements Listener {
 	
@@ -101,6 +106,22 @@ public class PluginListener implements Listener {
 			
 		}
 		
+	}
+	
+	@SuppressWarnings("unlikely-arg-type")
+	public void onInteract(InventoryClickEvent event)
+	{
+		if(event.getAction().equals(Action.LEFT_CLICK_AIR) || event.getAction().equals(Action.LEFT_CLICK_BLOCK))
+		{
+			if(event.getInventory().getName().equals("Select Class"))
+			{
+				if(event.getCurrentItem().equals(CustomInventory.GetMarioItem()))
+				{
+					Joueur j = new Joueur((Player)event.getWhoClicked(), new Mario());
+					Joueur.inGame.put((Player) event.getWhoClicked(), j);
+				}
+			}
+		}
 	}
 
 }

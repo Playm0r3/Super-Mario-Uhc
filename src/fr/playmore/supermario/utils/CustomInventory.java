@@ -14,7 +14,7 @@ public class CustomInventory {
 
 	public static void OpenSelectClassInventory(Player player)
 	{
-		Inventory inv = Bukkit.createInventory(player, 9);
+		Inventory inv = Bukkit.createInventory(player, 9, "Select Class");
 		
 		inv.addItem(CustomInventory.GetMarioItem());
 		inv.addItem(CustomInventory.GetLuigiItem());
