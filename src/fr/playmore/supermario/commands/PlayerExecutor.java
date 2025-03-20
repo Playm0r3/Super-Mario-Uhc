@@ -11,6 +11,7 @@ import org.bukkit.entity.Player;
 import fr.playmore.supermario.Plugin;
 import fr.playmore.supermario.roles.Joueur;
 import fr.playmore.supermario.roles.Role;
+import fr.playmore.supermario.utils.CustomInventory;
 
 public class PlayerExecutor  implements CommandExecutor{
 
@@ -30,13 +31,10 @@ public class PlayerExecutor  implements CommandExecutor{
 			if(cmd.getName().equals("mu") && args.length == 1)
 			{
 				try {
-					Class<?> clazz = Class.forName("fr.playmore.supermario." + args[1]);
-					Constructor<?> constructor = clazz.getConstructor();
-					Joueur joueur = new Joueur(s, (Role) constructor.newInstance());
-					Joueur.inGame.put(s, joueur);
+					CustomInventory.OpenSelectClassInventory(s);
 					return true;
-				} catch (ClassNotFoundException |InstantiationException|IllegalAccessException|IllegalArgumentException
-						|InvocationTargetException|NoSuchMethodException | SecurityException e) {
+				} catch (IllegalArgumentException
+						|SecurityException e) {
 					e.printStackTrace();
 				}
 				
