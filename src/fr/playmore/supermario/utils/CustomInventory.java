@@ -48,4 +48,14 @@ public class CustomInventory {
 		it.setItemMeta(itm);
 		return it;
 	}
+	
+	public static ItemStack GetYoshiItem()
+	{
+		ItemStack it = new ItemStack(Material.EGG);
+		ItemMeta itm = it.getItemMeta();
+		itm.addEnchant(Enchantment.DAMAGE_ALL, 2, true);
+		itm.setLore(Arrays.asList("Egg's Yoshi"));
+		it.setItemMeta(itm);
+		return it;
+	}
 }
