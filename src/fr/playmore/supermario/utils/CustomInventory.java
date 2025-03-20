@@ -28,4 +28,14 @@ public class CustomInventory {
 		it.setItemMeta(itm);
 		return it;
 	}
+	
+	public static ItemStack GetPeachItem()
+	{
+		ItemStack it = new ItemStack(Material.GOLDEN_APPLE);
+		ItemMeta itm = it.getItemMeta();
+		itm.addEnchant(Enchantment.DAMAGE_ALL, 2, true);
+		itm.setLore(Arrays.asList("Don't eat that !"));
+		it.setItemMeta(itm);
+		return it;
+	}
 }
