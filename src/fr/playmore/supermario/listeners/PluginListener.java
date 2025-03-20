@@ -17,8 +17,12 @@ import fr.playmore.supermario.Plugin;
 import fr.playmore.supermario.State;
 import fr.playmore.supermario.manager.PlayerManager;
 import fr.playmore.supermario.math.Vector3;
+import fr.playmore.supermario.roles.Daisy;
 import fr.playmore.supermario.roles.Joueur;
+import fr.playmore.supermario.roles.Luigi;
 import fr.playmore.supermario.roles.Mario;
+import fr.playmore.supermario.roles.Peach;
+import fr.playmore.supermario.roles.Yoshi;
 import fr.playmore.supermario.title.Title;
 import fr.playmore.supermario.utils.CustomInventory;
 
@@ -118,6 +122,30 @@ public class PluginListener implements Listener {
 				if(event.getCurrentItem().equals(CustomInventory.GetMarioItem()))
 				{
 					Joueur j = new Joueur((Player)event.getWhoClicked(), new Mario());
+					Joueur.inGame.put((Player) event.getWhoClicked(), j);
+				}
+				
+				if(event.getCurrentItem().equals(CustomInventory.GetLuigiItem()))
+				{
+					Joueur j = new Joueur((Player)event.getWhoClicked(), new Luigi());
+					Joueur.inGame.put((Player) event.getWhoClicked(), j);
+				}
+				
+				if(event.getCurrentItem().equals(CustomInventory.GetPeachItem()))
+				{
+					Joueur j = new Joueur((Player)event.getWhoClicked(), new Peach());
+					Joueur.inGame.put((Player) event.getWhoClicked(), j);
+				}
+				
+				if(event.getCurrentItem().equals(CustomInventory.GetDaisyItem()))
+				{
+					Joueur j = new Joueur((Player)event.getWhoClicked(), new Daisy());
+					Joueur.inGame.put((Player) event.getWhoClicked(), j);
+				}
+				
+				if(event.getCurrentItem().equals(CustomInventory.GetYoshiItem()))
+				{
+					Joueur j = new Joueur((Player)event.getWhoClicked(), new Yoshi());
 					Joueur.inGame.put((Player) event.getWhoClicked(), j);
 				}
 			}
