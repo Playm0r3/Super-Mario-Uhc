@@ -123,30 +123,35 @@ public class PluginListener implements Listener {
 				{
 					Joueur j = new Joueur((Player)event.getWhoClicked(), new Mario());
 					Joueur.inGame.put((Player) event.getWhoClicked(), j);
+					event.getWhoClicked().closeInventory();
 				}
 				
 				if(event.getCurrentItem().equals(CustomInventory.GetLuigiItem()))
 				{
 					Joueur j = new Joueur((Player)event.getWhoClicked(), new Luigi());
 					Joueur.inGame.put((Player) event.getWhoClicked(), j);
+					event.getWhoClicked().closeInventory();
 				}
 				
 				if(event.getCurrentItem().equals(CustomInventory.GetPeachItem()))
 				{
 					Joueur j = new Joueur((Player)event.getWhoClicked(), new Peach());
 					Joueur.inGame.put((Player) event.getWhoClicked(), j);
+					event.getWhoClicked().closeInventory();
 				}
 				
 				if(event.getCurrentItem().equals(CustomInventory.GetDaisyItem()))
 				{
 					Joueur j = new Joueur((Player)event.getWhoClicked(), new Daisy());
 					Joueur.inGame.put((Player) event.getWhoClicked(), j);
+					event.getWhoClicked().closeInventory();
 				}
 				
 				if(event.getCurrentItem().equals(CustomInventory.GetYoshiItem()))
 				{
 					Joueur j = new Joueur((Player)event.getWhoClicked(), new Yoshi());
 					Joueur.inGame.put((Player) event.getWhoClicked(), j);
+					event.getWhoClicked().closeInventory();
 				}
 			}
 		}
