@@ -19,6 +19,8 @@ public class Plugin extends JavaPlugin {
 	public World nether;
 	public World end;
 	
+	public boolean team = false;
+	
 	@Override
 	public void onEnable() {
 		setState(State.WAITTING);

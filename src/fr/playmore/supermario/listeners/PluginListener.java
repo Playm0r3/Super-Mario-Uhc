@@ -88,6 +88,8 @@ public class PluginListener implements Listener {
 					return;
 				}
 				
+				// mettre code pour annuler les dégats si les joueurs sont dans la même équipe.
+				
 			}
 			
 			if(event.getDamager() instanceof Arrow) {
