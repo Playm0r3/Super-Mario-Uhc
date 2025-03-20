@@ -38,4 +38,14 @@ public class CustomInventory {
 		it.setItemMeta(itm);
 		return it;
 	}
+	
+	public static ItemStack GetDaisyItem()
+	{
+		ItemStack it = new ItemStack(Material.SANDSTONE);
+		ItemMeta itm = it.getItemMeta();
+		itm.addEnchant(Enchantment.DAMAGE_ALL, 2, true);
+		itm.setLore(Arrays.asList("Royal sand ?"));
+		it.setItemMeta(itm);
+		return it;
+	}
 }
