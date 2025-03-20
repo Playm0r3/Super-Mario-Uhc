@@ -18,4 +18,14 @@ public class CustomInventory {
 		it.setItemMeta(itm);
 		return it;
 	}
+	
+	public static ItemStack GetLuigiItem()
+	{
+		ItemStack it = new ItemStack(Material.GHAST_TEAR);
+		ItemMeta itm = it.getItemMeta();
+		itm.addEnchant(Enchantment.DAMAGE_ALL, 2, true);
+		itm.setLore(Arrays.asList("who's tear ?"));
+		it.setItemMeta(itm);
+		return it;
+	}
 }
